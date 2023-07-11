@@ -35,9 +35,11 @@ function ModThreeCalculator() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const resultState = finiteStateMachine.checkInput(inputString);
-    const reminder = finiteStateMachine.findReminder(resultState);
-    setReminder(reminder);
-    setStateValue(resultState);
+    if(resultState){
+      const reminder = finiteStateMachine.findReminder(resultState);
+      setReminder(reminder);
+      setStateValue(resultState);
+    }
   };
 
   return (

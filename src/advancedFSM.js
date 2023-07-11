@@ -4,7 +4,8 @@ function FiniteStateMachine(states, alphabet, initialState, acceptingStates, tra
         let currentState = initialState;
         for (const character of input) {
             if (!alphabet.includes(character)) {
-                throw new Error(`Invalid input character: ${character}`);
+                alert(`Invalid input character: ${character}`);
+                return null;
               }
           currentState = transitionFunction(currentState, character);
         }
